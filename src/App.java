@@ -1,3 +1,5 @@
+import controllers.MovieController;
+import models.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -7,6 +9,17 @@ public class App {
         // MovieController
         // imprimir la lista de películas ordenada
 
+        MovieController movie = new MovieController();
+        Movie[] movies = generateMoviesList();
+        System.out.println("===Lista Original===");
+        for (Movie m : movies) {
+            System.out.println(m);
+        }
+        movie.sortByTitle(movies);
+        System.out.println("===Lista de Peliculas Ordenada===");
+        for (Movie m : movies) {
+            System.out.println(m);
+        }
     }
 
     /**
